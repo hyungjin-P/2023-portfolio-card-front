@@ -72,9 +72,11 @@ const scenes = {
       return `<path d="${d}" stroke="#9fb8d9" stroke-width="2" fill="none" opacity="${f(0.15 + i * 0.02)}"/>`;
     }).join('');
     return svg(w, h,
-      lin('night', [[0, '#0b1433'], [0.55, '#1f3562'], [1, '#2e5a7d']]) + lin('sea', [[0, '#173250'], [1, '#08121f']]),
+      lin('night', [[0, '#0b1433'], [0.55, '#1f3562'], [1, '#2e5a7d']]) + lin('sea', [[0, '#173250'], [1, '#08121f']]) +
+        `<radialGradient id="halo"><stop offset="0.55" stop-color="#f6edc8" stop-opacity="0.22"/><stop offset="1" stop-color="#f6edc8" stop-opacity="0"/></radialGradient>`,
       `<rect width="${w}" height="${h}" fill="url(#night)"/>${stars}` +
-        `<circle cx="540" cy="620" r="170" fill="#f6edc8"/><circle cx="600" cy="580" r="150" fill="#1f3562" opacity="0.18"/>` +
+        // 달 위에 반투명 원을 겹치면 회색 얼룩처럼 보여 보름달 + 달무리로 그린다
+        `<circle cx="540" cy="620" r="300" fill="url(#halo)"/><circle cx="540" cy="620" r="170" fill="#f6edc8"/>` +
         `<rect y="1000" width="${w}" height="${h - 1000}" fill="url(#sea)"/>${glints}${waves}`);
   },
   // 작품: 바우하우스풍 기하 구성

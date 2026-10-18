@@ -135,7 +135,8 @@ export function createSeed(): MockSeed {
         name: '포트폴리오',
         mainVisualUrl: `${IMG}/cover-dusk-mountains.svg`,
         nickName: '윤슬',
-        subTitle: '빛과 물결 사이의 풍경을 그립니다.\n회화 · 드로잉 · 설치',
+        // 프리뷰 앞면은 줄바꿈을 공백으로 그려(preview-front .preview-front-content-subtitle) 끝말만 다음 줄로 떨어진다 → 한 줄로 둔다
+        subTitle: '빛과 물결 사이의 풍경을 그립니다',
         ...stamp(2),
         portfolioMainVisualTags: ['회화', '풍경', '드로잉'].map((content, i) => ({ id: uid('t', 10 + i), portfolioMainVisualId: uid('m', 1), content, ...stamp(2) })),
         portfolioMainVisualThemes: [],
@@ -200,8 +201,9 @@ export function createSeed(): MockSeed {
         portfolioHistoryContacts: [{ id: uid('k', 2), portfolioHistoryId: h2, prefix: '', tel: '010-0000-0000', email: 'moonlit-studio@example.com', ...stamp(2) }],
         portfolioHistoryEducations: [section('e', h2, 'portfolioHistoryEducationId', 3, '', [['2018', ['샘플디자인학교 일러스트레이션 전공 졸업']]])],
         portfolioHistoryExhibitions: [section('x', h2, 'portfolioHistoryExhibitionId', 3, '그룹전', [['2023', ['《밤의 지도》, 예시 갤러리']]])],
-        portfolioHistoryAwards: [],
-        portfolioHistoryEtc: [],
+        // 빈 배열이면 프리뷰 뒷면에 [Awards]·[Etc] 머리글만 남는다(preview-back.component.html) → 한 줄씩 채운다
+        portfolioHistoryAwards: [section('r', h2, 'portfolioHistoryAwardId', 2, '', [['2022', ['샘플 일러스트레이션 공모전 입선']]])],
+        portfolioHistoryEtc: [section('o', h2, 'portfolioHistoryEtcId', 2, '출판', [['2023', ['그림책 《달의 정원》 그림, 예시출판사']]])],
       },
     ],
   };
