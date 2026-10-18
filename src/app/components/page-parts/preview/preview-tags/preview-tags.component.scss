@@ -1,0 +1,45 @@
+@import '/src/assets/mixins/font';
+@import '~swiper/swiper-bundle.min.css';
+
+.preview-tag-wrapper {
+  margin-top: 32px;
+
+  .preview-tag-swiper {
+    .preview-tag-swiper-wrapper {
+      .preview-tag-swiper-slide {
+        width: auto;
+        display: flex;
+
+        .preview-front-content-tag {
+          border: 1px solid var(--preview-tag-text-color);
+          padding: 1.54vw 3.08vw;
+          margin-right: 2.05vw;
+          @include textStyleMontserratPlus(3.08vw, 3.85vw, 500);
+          color: var(--preview-tag-text-color);
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none
+        }
+      }
+    }
+  }
+}
+
+@media (width > 499px) {
+  .preview-tag-wrapper {
+    margin-top: 36px;
+
+    .preview-tag-swiper {
+      .preview-tag-swiper-wrapper {
+        .preview-tag-swiper-slide {
+          .preview-front-content-tag {
+            padding: 7px 15px;
+            margin-right: 10px;
+            @include textStyleMontserratPlus(15px, 19px, 500);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<div class="editor-tab-container">
+  <app-shared-editor-tabs></app-shared-editor-tabs>
+</div>
+
+<router-outlet></router-outlet>
+
+<!-- 미리보기 버튼-->
+<div class="button-preview-wrap">
+  <shared-button-preview
+    (buttonPreviewEmitter)="goPreview()"
+  ></shared-button-preview>
+</div>

@@ -1,0 +1,38 @@
+<div class="artwork-panel" #artworkPanelRef>
+  <div class="artwork-panel-inner">
+    <div class="artwork-panel-contents" overlay-scrollbars>
+
+      <div class="content" *ngIf="portfolioArtWork">
+        <div class="art-work-block"
+             *ngFor="let block of portfolioArtWork.portfolioArtWorkBlocks"
+        >
+          <div class="art-work-block-image" *ngIf="block.blockType === 'image'">
+            <div class="picture">
+              <app-shared-art-work-slider
+                [pictures]="block.portfolioArtWorkPictures"
+              >
+              </app-shared-art-work-slider>
+            </div>
+            <h1 class="title">
+              {{block.title}}
+            </h1>
+            <h2 class="description">
+              {{block.description}}
+            </h2>
+          </div>
+          <div class="art-work-block-text" *ngIf="block.blockType === 'text'">
+            <h1>
+              {{block.title}}
+            </h1>
+            <h2>
+              {{block.description}}
+            </h2>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

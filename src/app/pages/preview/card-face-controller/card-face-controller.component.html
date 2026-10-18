@@ -1,0 +1,14 @@
+<div class="card-face-controller">
+  <div class="control front"
+       [ngClass]="getFrontControllerStyle()"
+       (click)="changeCardFaceData(CardFace.Front)"
+       mat-ripple >
+    FRONT
+  </div>
+  <div class="control back"
+       [ngClass]="getBackControllerStyle()"
+       (click)="changeCardFaceData(CardFace.Back)"
+       mat-ripple>
+    BACK
+  </div>
+</div>

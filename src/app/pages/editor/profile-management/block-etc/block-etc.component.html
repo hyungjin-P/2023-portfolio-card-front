@@ -1,0 +1,33 @@
+<div class="block-etc pd-14">
+  <shared-accordion-block-notice
+    [innerText]="'프로필 기본 블록 이외의 자격증, 작품 소장, 이력, 심사위원 경력, 강사 이력, 참가 프로그램 등 본인의 다양한 경험을 보여줄 수 있는 정보를 추가할 수 있어요. '"
+  ></shared-accordion-block-notice>
+
+  <shared-block-section
+    *ngFor="let blockSection of etcBlockSections"
+    [title]="blockSection.title!"
+    [blockSectionSubtitle]="blockSection?.subtitles"
+    [isDividerActive]="activeDivider(blockSection)"
+    (clickRemoveBlockSectionButtonEmitter)="removeBlockSection($event, blockSection)"
+    [label]="'기타 타이틀'"
+    [titlePlaceholder]="'* 기타 종류(타이틀)을 입력하세요'"
+    [subtitlePlaceholder]="'* 연도 입력 YYYY년'"
+    [valuePlaceholder]="'* 위의 연도에 맞는 구체적 내용 입력'"
+    (updateTitleInputEmitter)="updateBlockSectionTitle($event, blockSection)"
+    (updateSubtitleEmitter)="updateBlockSection($event, blockSection)"
+    (updateValueEmitter)="updateBlockSection($event, blockSection)"
+    (removeSubtitleEmitter)="removeSubtitle($event)"
+    (removeValueEmitter)="removeValue($event)"
+  ></shared-block-section>
+
+  <shared-button-add-block-section
+    [buttonText]="'기타 이력 추가'"
+    (clickAddBlockSectionButtonEmitter)="addBlockSection()"
+  ></shared-button-add-block-section>
+
+  <shared-buttons-cancel-save
+    [disableSaveButton]="disableSaveButton"
+    (clickCancelEmitter)="openCancelConfirm($event)"
+    (clickSaveEmitter)="save()"
+  ></shared-buttons-cancel-save>
+</div>

@@ -1,0 +1,21 @@
+<div class="shared-confirm-dialog-content">
+  <div class="shared-confirm-dialog-content-title">
+    {{ confirmDialogData?.title }}
+  </div>
+  <div class="shared-confirm-dialog-content-body"
+       *ngIf="confirmDialogData?.message">
+    {{ confirmDialogData?.message }}
+  </div>
+  <div class="shared-confirm-dialog-content-footer">
+    <button class="first-button"
+            mat-flat-button
+            (click)="confirm()" >
+      {{confirmDialogData?.confirmButtonText ? confirmDialogData?.confirmButtonText : '확인' }}
+    </button>
+    <button mat-flat-button
+            (click)="cancel()">
+      {{confirmDialogData?.closeButtonText ? confirmDialogData?.closeButtonText : '취소' }}
+    </button>
+  </div>
+</div>
+

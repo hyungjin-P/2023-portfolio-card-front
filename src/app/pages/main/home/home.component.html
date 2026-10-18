@@ -1,0 +1,42 @@
+<div class="home pd-lg">
+  <div class="home-title">
+    Creative<br>
+    아티스트를 위한<br>
+    포트폴리오 서비스.
+  </div>
+
+  <div class="home-description">
+    나의 프로필과 포트폴리오를 온라인으로 쉽게<br>
+    업데이트 하여, 큐알코드와 링크로 공유해 보세요.
+  </div>
+
+  <div class="create-portfolio">
+    <div
+      class="create-portfolio-input-wrap"
+      #createPortfolioInputWrap
+      (click)="focusAuthorHopeUrl()"
+    >
+      <span>crackit-universe.com/</span>
+      <input
+        type="text"
+        placeholder="아이디"
+        autoSizeInput
+        [(ngModel)]="authorHopeUrl"
+        [maxWidth]="100"
+        (keyup)="keyupEnter($event)"
+        #authorHopeUrlInput>
+    </div>
+
+    <shared-button
+      [disabled]="!authorHopeUrl"
+      [buttonText]="'포트폴리오 바로 만들기'"
+      (click)="createPortfolio()"
+    ></shared-button>
+  </div>
+
+<!--  <div class="home-picture"></div>-->
+</div>
+
+<div class="home-footer">
+  <shared-footer></shared-footer>
+</div>

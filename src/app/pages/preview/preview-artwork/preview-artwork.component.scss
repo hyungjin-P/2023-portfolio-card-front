@@ -1,0 +1,30 @@
+.artwork-panel {
+  overflow-y: hidden !important;
+
+  .artwork-panel-inner {
+    position: relative;
+    padding-bottom: 50px;
+    height: 100%;
+
+    .artwork-panel-contents {
+      height: calc(100% - 100px);
+      overflow-y: scroll;
+
+      /* 여기에 스타일 추가 */
+      .content{
+        margin-top: 100px;
+
+        .art-work-block{
+          margin-top: 100px;
+          padding-left: 8px;
+          padding-right: 8px;
+
+          .art-work-block-text{
+            padding-left: 8px;
+            padding-right: 8px;
+          }
+        }
+      }
+    }
+  }
+}

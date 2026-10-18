@@ -1,0 +1,38 @@
+<div class="shared-block-section">
+  <shared-button-remove-block-section
+    (clickRemoveBlockSectionButtonEmitter)="clickRemoveBlockSectionButton($event)"
+  ></shared-button-remove-block-section>
+
+  <shared-input
+    *ngIf="isTitleInput"
+    [type]="'text'"
+    #titleInput
+    [label]="label"
+    [placeholder]="titlePlaceholder"
+    [requiredMessage]="'내용을 입력해주세요.'"
+    [textLengthVisible]="true"
+    [maxTextLength]="50"
+    [hintMessage]="''"
+    (inputFieldKeyupEmitter)="updateTitleInput($event)"
+  ></shared-input>
+
+  <shared-block-section-subtitle
+    *ngFor="let blockSubtitle of blockSectionSubtitle"
+    [subtitle]="blockSubtitle.subtitle"
+    [values]="blockSubtitle.values"
+    [isLineActive]="activeLine(blockSubtitle)"
+    [isSubtitleLabel]="isSubtitleLabel"
+    [subtitlePlaceholder]="subtitlePlaceholder"
+    [valuePlaceholder]="valuePlaceholder"
+    (clickAddSubtitleButtonEmitter)="addSubtitle()"
+    (clickRemoveSubtitleButtonEmitter)="removeSubtitle(blockSubtitle)"
+    (clickAddValueButtonEmitter)="addValue($event, blockSubtitle)"
+    (clickRemoveValueButtonEmitter)="removeValue($event, blockSubtitle)"
+    (updateValueEmitter)="updateValue($event, blockSubtitle)"
+    (updateSubtitleEmitter)="updateSubtitle($event, blockSubtitle)"
+  ></shared-block-section-subtitle>
+
+  <block-section-divider
+    *ngIf="isDividerActive"
+  ></block-section-divider>
+</div>

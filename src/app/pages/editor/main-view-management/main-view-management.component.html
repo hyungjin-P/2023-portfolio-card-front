@@ -1,0 +1,63 @@
+<div class="editor-container-content">
+  <div class="main-view-management">
+    <div class="section-background">
+      <shared-block-label
+        [label]="'배경 커버사진'"
+        [guideVisible]="true"
+        [textLengthVisible]="false"
+        #backgroundLabel
+        (guideClick)="openGuide(backgroundLabel)"
+      ></shared-block-label>
+
+      <main-view-background-change
+        #backgroundChanger
+        (fileChange)="coverImageUpload($event)"
+      ></main-view-background-change>
+    </div>
+
+    <shared-input [type]="'text'"
+                  #mainTitleInput
+                  [label]="'메인 타이틀 입력'"
+                  (inputFieldKeyupEmitter)="validateSaveButton()"
+                  [placeholder]="'예) 닉네임, 이름 활동명, 등 메인 타이틀'"
+                  [requiredMessage]="'내용을 입력해주세요.'"
+                  [textLengthVisible]="true"
+                  [maxTextLength]="20"
+                  [hintMessage]="''"></shared-input>
+
+    <shared-textarea
+      [label]="'서브 타이틀 입력'"
+      #subTitleTextarea
+      [guideVisible]="false"
+      (inputFieldKeyupEmitter)="validateSaveButton()"
+      [textLengthVisible]="true"
+      [maxTextLength]="40"
+      [placeholder]="'예) 포트폴리오 간단소개, 슬로건 등'"
+      [requiredMessage]="'내용을 입력해주세요.'"
+    ></shared-textarea>
+
+    <div class="section-keyword">
+      <shared-block-label
+        [label]="'나의 키워드'"
+        [textLengthVisible]="true"
+        [maxTextLength]="5"
+        [nowTextLength]="portfolioMainVisualTags.length"
+      ></shared-block-label>
+    </div>
+
+    <main-view-tag
+      #mainViewTags
+      [portfolioMainVisualTags]="portfolioMainVisualTags"
+      (keyupEnterEmitter)="addTag($event)"
+      (clickTagButtonEmitter)="addTag($event)"
+      (clickDeleteButton)="deleteTag($event)"
+    ></main-view-tag>
+
+    <shared-buttons-cancel-save
+      [disableSaveButton]="!disableSaveButton"
+      (clickCancelEmitter)="openCancelConfirm($event)"
+      (clickSaveEmitter)="save()"
+    ></shared-buttons-cancel-save>
+
+  </div>
+</div>

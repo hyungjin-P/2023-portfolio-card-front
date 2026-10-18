@@ -1,0 +1,30 @@
+<div class="keyword-tags">
+  <div class="input-tag-wrap">
+    <button class="icon-plus"
+            mat-ripple
+            (click)="clickTagButton(keywordInput)">
+      <img src='../../../../../assets/icons/crackit/plus.svg' alt="">
+    </button>
+    <input autoSizeInput
+           [minWidth]="60"
+           [maxWidth]="150"
+           type="text"
+           class="input-tag"
+           (keyup)="emitKeyupEnter($event)"
+           #keywordInput>
+    <button class="button-delete-tag input-button"
+            type="button"
+            (click)="clearKeywordInput(keywordInput)">
+      <img src='../../../../../assets/icons/crackit/close_button.svg' alt="">
+    </button>
+  </div>
+
+  <div class="keyword-tag" *ngFor="let tag of portfolioMainVisualTags">
+    {{ tag.content }}
+    <button class="button-delete-tag"
+            type="button"
+            (click)="emitClickDeleteButton(tag)">
+      <img src='../../../../../assets/icons/crackit/close_button.svg' alt="">
+    </button>
+  </div>
+</div>

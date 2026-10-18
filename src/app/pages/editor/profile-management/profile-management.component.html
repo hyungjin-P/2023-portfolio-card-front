@@ -1,0 +1,13 @@
+<div class="profile-management pd-all-16">
+  <shared-accordion-block
+    class="shared-accordion-block"
+    *ngFor="let block of profileManagementBlocks"
+    [blockTitle]="block.title"
+    [isBlockOpen]="block.isActive"
+    [isBlockPublic]="block.isPublic"
+    [isPublicButton]="block.isPublicButton"
+    [innerComponent]="block.innerComponent"
+    (clickOpenButtonEmitter)="clickOpenButton(block)"
+    (clickPublicButtonEmitter)="clickPublicButton(block)"
+  ></shared-accordion-block>
+</div>

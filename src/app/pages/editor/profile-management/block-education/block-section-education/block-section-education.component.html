@@ -1,0 +1,31 @@
+<div class="block-section-education">
+  <shared-button-remove-block-section
+    (clickRemoveBlockSectionButtonEmitter)="clickRemoveBlockSectionButton($event)"
+  ></shared-button-remove-block-section>
+
+  <shared-input [type]="'text'"
+                #educationInput
+                [label]="'학교 및 전공'"
+                [placeholder]="'예) OO 대학교 미술학과 학사 입학 또는 졸업'"
+                [requiredMessage]="'내용을 입력해주세요.'"
+                [textLengthVisible]="true"
+                [maxTextLength]="100"
+                [hintMessage]="''"
+                (inputFieldKeyupEmitter)="updateEducationInput($event)"
+  ></shared-input>
+
+  <shared-input [type]="'text'"
+                #yearInput
+                [label]="'연도'"
+                [textLengthVisible]="true"
+                [maxTextLength]="4"
+                [placeholder]="'입학 또는 졸업 연도 YYYY'"
+                [requiredMessage]="'내용을 입력해주세요.'"
+                [hintMessage]="''"
+                (inputFieldKeyupEmitter)="updateYear($event)"
+  ></shared-input>
+
+  <block-section-divider
+    *ngIf="isDividerActive"
+  ></block-section-divider>
+</div>

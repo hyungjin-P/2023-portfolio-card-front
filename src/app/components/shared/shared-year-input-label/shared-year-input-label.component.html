@@ -1,0 +1,27 @@
+<div class="shared-year-input-label-wrap">
+  <label class="year-input-text-label"
+         (click)="labelClickEvent()">
+    {{ label }}
+  </label>
+
+
+  <div class="year-input-label-buttons">
+    <button class="button-add-year"
+            (click)="clickAddYearButton($event)"
+            type="button">
+      <span class="button-add-year-icon">
+        <img src="assets/icons/crackit/button-add-year-input.svg" alt="추가">
+      </span>
+      <span class="button-add-year-text">추가</span>
+    </button>
+
+    <div class="border-line"></div>
+
+    <button class="button-remove-year"
+            (click)="clickRemoveYearButton($event)"
+            type="button">
+      <span class="button-remove-year-text">삭제</span>
+    </button>
+  </div>
+
+</div>

@@ -1,0 +1,30 @@
+<button class="shared-input-guide"
+        type="button"
+        title="guide1"
+        #testButton
+        (click)="openConfirmDialog(testButton)">
+  <img alt="" src="assets/icons/crackit/help.svg">
+</button>
+<button class="shared-input-guide"
+        type="button"
+        title="guide2"
+        #testButton2
+        (click)="openConfirmDialog(testButton2)">
+  <img alt="" src="assets/icons/crackit/help.svg">
+</button>
+
+<div class="background-cover">
+  <input type="file" hidden (change)="onChange($event)" #backgroundInput>
+  <img class="background-image" src="assets/icons/crackit/camera.svg" alt="">
+  <button class="button-change-background" type="button" (click)="backgroundInput.click()">
+    <div class="button-change-background-wrap">
+      <span class="button-change-background-icon">
+        <img src="assets/icons/crackit/upload.svg">
+      </span>
+      <span class="button-change-background-text" *ngIf="!isUploaded">커버 사진 업로드</span>
+      <span class="button-change-background-text active" *ngIf="isUploaded">커버 사진 변경</span>
+    </div>
+  </button>
+</div>
+
+

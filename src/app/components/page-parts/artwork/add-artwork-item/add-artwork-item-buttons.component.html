@@ -1,0 +1,21 @@
+<div class="add-artwork-item-buttons-wrapper">
+  <button type="button"
+          class="mr-10px"
+          mat-ripple
+          (click)="selectedAddButtonTypeEmit(AddArtworkType.ARTWORK)">
+    <div class="button-image">
+      <img src="assets/icons/crackit/plus.png" alt="">
+    </div>
+    <div class="button-text">작품 추가</div>
+  </button>
+  <button type="button"
+          mat-ripple
+          (click)="selectedAddButtonTypeEmit(AddArtworkType.TEXT)">
+    <div class="button-image">
+      <img src="assets/icons/crackit/plus.png" alt="">
+    </div>
+    <div class="button-text">
+      텍스트 추가
+    </div>
+  </button>
+</div>

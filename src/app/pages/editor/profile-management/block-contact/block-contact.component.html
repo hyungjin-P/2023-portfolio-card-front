@@ -1,0 +1,27 @@
+<script src="block-contact.component.ts"></script>
+<div class="block-contact pd-14">
+  <shared-accordion-block-notice
+    [innerText]="'포트폴리오 프로필 화면에서 ‘Contact’로 표시됩니다. 컬렉터 및 전시 담당자 등의 연락을 받을 수 있는 다양한 기회를 놓치지 않으려면, 정확한 이메일 주소나 연락가능한 번호를 입력하시길 권해드려요.'"
+  ></shared-accordion-block-notice>
+
+  <shared-input [type]="'text'"
+                #phoneNumberInput
+                [label]="'전화번호'"
+                [placeholder]="'휴대폰 및 전화번호 입력'"
+                [requiredMessage]="'내용을 입력해주세요.'"
+                [hintMessage]="'숫자와 `-`만을 사용해서 작성해주세요.'"></shared-input>
+
+  <shared-input [type]="'email'"
+                #emailInput
+                [label]="'이메일'"
+                [placeholder]="'이메일 주소 입력'"
+                [requiredMessage]="'내용을 입력해주세요.'"
+                [emailMessage]="'이메일 주소 형식을 확인해주세요.'"
+                [hintMessage]="''"></shared-input>
+
+  <shared-buttons-cancel-save
+    [disableSaveButton]="disableSaveButton"
+    (clickCancelEmitter)="openCancelConfirm($event)"
+    (clickSaveEmitter)="save()"
+  ></shared-buttons-cancel-save>
+</div>

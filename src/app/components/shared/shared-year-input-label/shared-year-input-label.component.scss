@@ -1,0 +1,55 @@
+@import 'src/assets/mixins/_font.scss';
+
+.shared-year-input-label-wrap {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 8px;
+  width: 100%;
+
+  .grow {
+    margin-left: auto;
+  }
+
+  .year-input-text-label {
+    @include textStyleNotoSansPlus(13px, 21px, 500);
+    margin-right: 6px;
+    cursor: pointer;
+  }
+
+  .year-input-label-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+
+    .border-line {
+      width: 1px;
+      height: 10px;
+      background-color: #DBDBDB;
+      margin: 0 12px;
+    }
+
+    .button-add-year {
+      display: flex;
+
+      .button-add-year-icon {
+        display: flex;
+        align-items: center;
+        height: 22px;
+        margin-right: 2px;
+      }
+
+      .button-add-year-text {
+        @include textStyleNotoSansPlus(14px, 22px, 500);
+      }
+    }
+
+    .button-remove-year {
+      .button-remove-year-text {
+        color: #999999;
+        @include textStyleNotoSansPlus(14px, 22px, 400);
+      }
+    }
+  }
+
+}

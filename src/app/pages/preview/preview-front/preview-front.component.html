@@ -1,0 +1,26 @@
+<div class="preview-front"
+     [style.background-image]="getBackgroundStyle()">
+
+  <div class="empty-main-visual-image" *ngIf="!backgroundSrc">
+    추가한 커버사진이<br>표시됩니다.
+  </div>
+
+  <div class="preview-front-backdrop"></div>
+  <div class="preview-front-content">
+    <button class="button-external-link"
+            type="button"
+            mat-ripple
+            (click)="clickButtonExternalLink()"
+            *ngIf="this?.loginAuthor"
+    >
+      <img src="assets/icons/crackit/button-external-link.svg" alt="">
+    </button>
+    <div class="preview-front-content-title">
+      {{ portfolioMainVisual?.nickName ? portfolioMainVisual?.nickName : '입력한 메인 타이틀' }}
+    </div>
+    <div class="preview-front-content-subtitle">
+      {{ portfolioMainVisual?.subTitle ? portfolioMainVisual?.subTitle : '입력한 내용이 표시됩니다.' }}
+    </div>
+    <preview-tags [tags]="tags"></preview-tags>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="section-buttons">
+  <button class="button-cancel button-style-secondary"
+          type="button"
+          (click)="emitClickCancel()"
+          mat-flat-button>
+    취소
+  </button>
+  <button class="button-save button-style-primary"
+          type="button"
+          mat-flat-button
+          [disabled]="disableSaveButton"
+          (click)="emitClickSave($event)"
+          color="primary">
+    저장
+  </button>
+</div>

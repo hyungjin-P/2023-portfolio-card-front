@@ -1,0 +1,17 @@
+<ng-template [ngIf]="isLoading">
+  <div class="shared-loading start">
+    <div class="shared-loading-spinner">
+      <ng-lottie
+        #loadingLottie
+        [width]="'100%'"
+        [height]="'100%'"
+        [options]="lottieOptions"
+        (animationCreated)="handleAnimation($event)"
+      ></ng-lottie>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="!isLoading">
+  <div class="shared-loading"></div>
+</ng-template>

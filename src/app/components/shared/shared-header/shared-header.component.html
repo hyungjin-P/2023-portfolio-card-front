@@ -1,0 +1,53 @@
+<div class="shared-header"
+     [ngClass]="headerType === 'preview'? 'preview' : 'default'">
+  <!-- 로고 있는 헤더-->
+  <div class="shared-header-contents" *ngIf="headerType === 'logo'">
+    <div class="logo">
+      <a>CRACK IT</a>
+    </div>
+
+    <!-- 로그인 했을 때-->
+    <ng-template [ngIf]="isLogin">
+      <button type="button" class="avatar"
+              mat-ripple
+              (click)="profileButtonClickedEvent($event)">
+        <img src="assets/icons/crackit/avatar.png" alt="">
+      </button>
+    </ng-template>
+
+    <!-- 로그인 안 했을 때-->
+    <ng-template [ngIf]="!isLogin">
+      <button
+        type="button"
+        mat-flat-button
+        color="primary"
+        (click)="loginButtonClickedEvent($event)"
+        class="button-login button-style-primary">
+        <span class="button-text">로그인</span>
+      </button>
+    </ng-template>
+  </div>
+
+  <!-- 뒤로가기 있는 헤더-->
+  <div class="shared-header-contents" *ngIf="headerType === HeaderElementType.GOBACK">
+    <button type="button" class="button-go-back"
+            mat-ripple
+            (click)="goBackButtonClickedEvent($event)">
+      <img src="assets/icons/crackit/button-go-back.svg" alt="">
+    </button>
+
+    <button type="button" class="button-close"
+            mat-ripple
+            (click)="goBackButtonClickedEvent($event)">
+      <img src="assets/icons/crackit/button-close.svg" alt="">
+    </button>
+  </div>
+
+  <!--미리보기용 헤더-->
+  <div class="shared-header-preview" *ngIf="headerType === HeaderElementType.PREVIEW">
+    <button type="button" class="button-close-preview"
+            (click)="closePreviewButtonClickedEvent($event)">
+      <img src="assets/icons/crackit/close-preview-button.svg" alt="">
+    </button>
+  </div>
+</div>

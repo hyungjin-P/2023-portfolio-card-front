@@ -1,0 +1,75 @@
+@import 'src/assets/mixins/font.scss';
+
+.shared-notice-dialog {
+  .mat-dialog-container {
+    box-sizing: border-box;
+    box-shadow: 0 32px 32px -8px rgba(0, 0, 0, 0.08), 0px 0px 32px -8px rgba(0, 0, 0, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 40px 16px 20px 16px;
+    //height: 400px;
+  }
+
+  .mat-dialog-title {
+    text-align: center;
+  }
+
+  .shared-confirm-dialog-content {
+    max-width: 500px;
+    min-width: 280px;
+
+    .shared-confirm-dialog-content-icon{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 11px;
+    }
+
+    .shared-confirm-dialog-content-title {
+      width: 100%;
+      @include textStyleNotoSans(700, 15px);
+      text-align: center;
+      margin-bottom: 20px;
+
+      &.title-only{
+        margin-bottom: 30px;
+      }
+    }
+
+    .shared-confirm-dialog-content-body {
+      width: 100%;
+      @include textStyleNotoSans(400, 13px);
+      line-height: 21px;
+      text-align: center;
+      margin-bottom: 24px;
+      white-space:pre;
+    }
+
+    .shared-confirm-dialog-content-footer {
+      text-align: center;
+      height: 46px;
+
+      button {
+        @include textStyleNotoSans(500, 14px);
+        background-color: var(--item-bg-primary);
+        color: var(--item-bg-primary-inner);
+        border-radius: 8px;
+        width: 100%;
+        height: 46px;;
+        padding: 12px 0;
+        line-height: 0;
+        transition: 0.2s ease;
+      }
+
+      .first-button {
+        margin-right: 10px;
+        background-color: var(--item-bg-secondary);
+        color: var(--item-bg-secondary-inner);
+
+
+        &:hover {
+          background-color: var(--item-bg-primary);
+          color: var(--item-bg-primary-inner);
+        }
+      }
+    }
+  }
+}

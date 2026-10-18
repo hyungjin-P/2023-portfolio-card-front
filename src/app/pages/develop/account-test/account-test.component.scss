@@ -1,0 +1,23 @@
+.account-test{
+  padding: 20px;
+  .copy-url-test{
+    display: flex;
+    margin-bottom: 20px;
+    .portfolio-url{
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin-right: 12px;
+      width: 294px;
+      height: 46px;
+      background: #D8D8D8;
+      border-radius: 8px;
+    }
+    .mat-button {
+      min-width: unset;
+      padding: 0 6px;
+      border-radius: 8px;
+    }
+  }
+
+}

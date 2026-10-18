@@ -1,0 +1,48 @@
+<div class="account pd-sm">
+  <div class="account-title page-title">
+    내 계정
+  </div>
+
+  <div class="account-block">
+    <div class="account-block-title active">계정 정보 확인</div>
+    <div class="account-block-content">
+      <div class="account-block-content-title">내 아이디 및 포트폴리오 주소</div>
+      <div class="account-block-content-content">
+        <div class="portfolio-url" #portfolioUrl>
+          crackit-universe.com/{{loginAuthor?.authorLink}}
+        </div>
+        <button mat-button
+                type="button"
+                [matTooltip]="'Copy'"
+                (click)="copyUrl(portfolioUrl.innerText)">
+          <img src="assets/icons/crackit/copy_button.svg" alt="">
+        </button>
+      </div>
+      <div class="account-block-content-title">이메일 주소(임시 비밀번호 발급)</div>
+      <div class="account-block-content-content">
+        <div class="portfolio-url">
+          {{loginAuthor?.email}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <shared-accordion-block
+    [blockTitle]="'비밀번호 변경'"
+    [isBlockOpen]="isBlockActive"
+    [isPublicButton]="false"
+    [innerComponent]="accountChangePasswordComponent"
+    (clickOpenButtonEmitter)="clickOpenButton()">
+  </shared-accordion-block>
+
+  <shared-button (onClickEmitter)="logout()"
+                 [buttonText]="'로그아웃'"></shared-button>
+
+  <button type="button"
+          class="button-signout button-style-tertiary"
+          (click)="signOut()"
+          mat-flat-button>회원탈퇴
+  </button>
+  <shared-footer></shared-footer>
+</div>
+

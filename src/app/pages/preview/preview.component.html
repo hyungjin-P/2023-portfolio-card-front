@@ -1,0 +1,21 @@
+<div class="portfolio-wrapper" *ngIf="portfolio">
+  <portfolio-card-face-control
+    (changeCardFace)="changeCardFace($event)">
+  </portfolio-card-face-control>
+
+  <ng-container *ngIf="nowCardFace === CardFace.Front">
+    <portfolio-preview-front
+      portfolioId="{{portfolio.id}}"
+    ></portfolio-preview-front>
+  </ng-container>
+
+  <ng-container *ngIf="nowCardFace === CardFace.Back">
+    <portfolio-preview-back
+      portfolioId="{{portfolio.id}}"
+    ></portfolio-preview-back>
+  </ng-container>
+
+  <preview-artwork
+    #previewArtWork
+  ></preview-artwork>
+</div>

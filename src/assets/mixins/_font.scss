@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@700&family=Montserrat:wght@500;600;700;800&display=swap');
+
+@mixin textStyle($font-weight, $font-size, $line-height) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin textStyleNotoSans($font-weight, $font-size) {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: $font-weight;
+  font-size: $font-size;
+}
+
+@mixin textStyleNotoSansPlus($font-size, $line-height, $font-weight) {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: $font-size;
+  line-height: $line-height ;
+  font-weight: $font-weight;
+}
+
+@mixin textStylePoppins($font-weight, $font-size) {
+  font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+  font-weight: $font-weight;
+  font-size: $font-size;
+}
+
+@mixin textStyleMontserrat($font-size, $font-weight) {
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+@mixin textStyleMontserratPlus($font-size, $line-height, $font-weight) {
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}

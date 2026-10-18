@@ -1,0 +1,60 @@
+<div class="sign-up pd-sm">
+  <div class="page-title">크래킷 유니버스 가입하기</div>
+
+  <div class="sign-up-author-link">
+    <div class="sign-up-author-link-input">
+      <shared-author-link-form #authorLinkField
+                             (suffixButtonClick)="duplicateAuthorLinkCheck()"
+      ></shared-author-link-form>
+    </div>
+  </div>
+
+  <shared-input
+    #passwordField
+    [type]="passwordType"
+    [eyeIcon]="true"
+    (isEyeOpened)="passwordTypeToggle(passwordField)"
+    [label]="'비밀번호'"
+    [hintMessage]="''"
+    [maxTextLength]="20"
+    [requiredMessage]="'비밀번호를 입력해주세요'"
+    [placeholder]="'6자리 이상 영문, 숫자로 입력해 주세요.'"
+  ></shared-input>
+
+  <shared-input
+    #passwordConfirmField
+    [type]="passwordType"
+    [eyeIcon]="true"
+    (isEyeOpened)="passwordTypeToggle(passwordConfirmField)"
+    [label]="'비밀번호 확인'"
+    [hintMessage]="''"
+    [maxTextLength]="20"
+    [requiredMessage]="'비밀번호를 입력해주세요'"
+    [placeholder]="'비밀번호를 한번 더 입력해 주세요.'"
+  ></shared-input>
+
+  <shared-input
+    #emailField
+    [type]="'email'"
+    [label]="'이메일'"
+    [placeholder]="'portfolio@example.com'"
+    [hintMessage]="
+      '이메일은 임시비밀번호 발급 용도로 사용되오니 정확하고 신중하게 입력해주세요.'
+    "
+    [requiredMessage]="'이메일 주소를 입력해주세요.'"
+    [emailMessage]="'이메일 주소 형식을 확인해주세요.'"
+  ></shared-input>
+
+  <shared-checkbox
+    #serviceTermField
+    [innerText]="'크래킷 유니버스 이용약관 및 개인정보 처리방침'"
+  ></shared-checkbox>
+
+  <div class="sign-up-confirm-button">
+    <shared-button
+      [buttonText]="'회원가입하기'"
+      [disabled]="!requireValidation()"
+      (onClickEmitter)="signUp()"
+    ></shared-button>
+  </div>
+</div>

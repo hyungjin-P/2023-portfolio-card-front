@@ -1,0 +1,30 @@
+<div class="preview-back">
+  <div class="preview-back-profile">
+    <div class="preview-back-profile-picture">
+      <img src="assets/images/sample/sample_bg.jpg" alt="" *ngIf="!portfolioHistoryGeneral?.generalImageUrl">
+      <img src="{{portfolioHistoryGeneral!.generalImageUrl}}" alt="" *ngIf="portfolioHistoryGeneral?.generalImageUrl">
+    </div>
+    <div class="preview-back-profile-name">
+      {{portfolioHistoryGeneral?.nickname}}
+    </div>
+  </div>
+  <div class="preview-back-categories">
+    <div class="preview-back-category-wrap" *ngFor="let block of previewBackBlocks">
+      <div class="preview-back-category-name">[{{block.name}}]</div>
+      <div class="preview-back-category-title" *ngFor="let blockTitles of block.innerHistory">
+        {{blockTitles?.title}}
+        <ul class="preview-back-category-contents">
+          <li class="preview-back-category-content"
+              *ngFor="let blockYears of blockTitles.subtitles"
+          >
+            <ul class="preview-back-category-content-subtitle">{{blockYears.subtitle}}.
+              <li class="preview-back-category-content-value" *ngFor="let blockValues of blockYears.values">
+                {{blockValues.value}}<br>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

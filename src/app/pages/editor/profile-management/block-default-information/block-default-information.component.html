@@ -1,0 +1,34 @@
+<div class="default-information pd-14">
+  <div class="default-information-profile">
+    <shared-block-label
+      [label]="'프로필 사진'"
+      [textLengthVisible]="false"
+      [guideVisible]="true"
+      #profilePictureLabel
+      (guideClick)="openGuide(profilePictureLabel)"
+    ></shared-block-label>
+
+    <default-information-profile-change
+      #profileChanger
+      (fileChange)="coverImageUpload($event)">
+    </default-information-profile-change>
+  </div>
+
+  <div class="default-information-name">
+    <shared-input #profileNameInput
+                  [type]="'text'"
+                  [label]="'이름'"
+                  [placeholder]="'* 이름, 활동명 등 입력'"
+                  [requiredMessage]="'내용을 입력해주세요.'"
+                  [textLengthVisible]="true"
+                  [maxTextLength]="20"
+                  [hintMessage]="''"></shared-input>
+  </div>
+
+  <shared-buttons-cancel-save
+    [disableSaveButton]="disableSaveButton"
+    (clickCancelEmitter)="openCancelConfirm($event)"
+    (clickSaveEmitter)="save()"
+  ></shared-buttons-cancel-save>
+</div>
+

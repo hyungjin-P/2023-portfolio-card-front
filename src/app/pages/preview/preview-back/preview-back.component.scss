@@ -1,0 +1,126 @@
+@import 'src/assets/mixins/_font.scss';
+
+.preview-back {
+  padding: 3.08vw;
+  .preview-back-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 165px;
+    .preview-back-profile-picture {
+      width: 20.51vw;
+      height: 20.51vw;
+      max-height: 100px;
+      max-width: 100px;
+      border-radius: 50%;
+      background-color: #888888;
+
+      img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
+
+    .preview-back-profile-name {
+      @include textStyleMontserratPlus(5.13vw, 6.15vw, 400);
+      letter-spacing: -0.01em;
+      color: var(--item-text-primary);
+      margin-top: 4.10vw;
+      margin-bottom: 11.79vw;
+    }
+  }
+
+  .preview-back-categories {
+    background-color: #F3F3F3;
+    width: 100%;
+    padding: 6.15vw 3.59vw;
+
+    .preview-back-category-wrap{
+      margin-bottom: 3.59vw;
+    }
+
+    .preview-back-category-name {
+      @include textStyleMontserratPlus(3.85vw, 5.13vw, 700);
+      margin-bottom: 2.56vw;
+    }
+
+    .preview-back-category-title {
+      @include textStyleMontserratPlus(3.59vw, 5.13vw, 700);
+    }
+
+    .preview-back-category-subtitle {
+      @include textStyleNotoSansPlus(3.59vw, 5.13vw, 500);
+      margin-bottom: 1.54vw;
+    }
+
+    .preview-back-category-contents {
+      @include textStyleNotoSansPlus(3.33vw, 4.62vw, 400);
+      .preview-back-category-content {
+        margin-bottom: 1.54vw;
+        .preview-back-category-content-subtitle{
+          margin-right: 1.54vw;
+        }
+      }
+    }
+  }
+}
+
+@media (width > 500px) {
+
+  .preview-back {
+    padding: 15px;
+
+    .preview-back-profile {
+      .preview-back-profile-picture {
+        img{
+        }
+      }
+
+      .preview-back-profile-name {
+        @include textStyleMontserratPlus(26px, 30px, 400);
+        margin-top: 20px;
+        margin-bottom: 60px;
+      }
+    }
+
+    .preview-back-categories {
+      padding: 30px 18px;
+
+      .preview-back-category-wrap{
+        margin-bottom: 18px;
+      }
+
+      .preview-back-category-name {
+        @include textStyleMontserratPlus(20px, 25px, 700);
+        margin-bottom: 13px;
+      }
+
+      .preview-back-category-title {
+        @include textStyleMontserratPlus(18px, 25px, 700);
+      }
+
+      .preview-back-category-subtitle {
+        @include textStyleNotoSansPlus(18px, 25px, 500);
+        margin-bottom: 8px;
+      }
+
+      .preview-back-category-contents {
+        @include textStyleNotoSansPlus(16px, 20px, 400);
+        .preview-back-category-content {
+          margin-bottom: 8px;
+          .preview-back-category-content-subtitle{
+            margin-right: 8px;
+            .preview-back-category-content-value{
+              text-indent: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

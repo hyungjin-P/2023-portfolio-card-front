@@ -1,0 +1,33 @@
+@import '/src/assets/mixins/font';
+
+.sign-up {
+  .sign-up-author-link {
+    width: 100%;
+    margin-bottom: 16px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+
+    .sign-up-author-link-input {
+      flex-grow: 1;
+      padding-right: 4px;
+    }
+
+    .sign-up-author-link-button {
+      height: 100%;
+      padding-bottom: 3px;
+
+      button {
+        height: 37.5px;
+        background-color: var(--item-bg-primary);
+        color: var(--item-bg-primary-inner);
+        @include textStyleNotoSans(500, 13px);
+        padding-bottom: 5px;
+      }
+    }
+  }
+
+  .sign-up-confirm-button {
+    margin-top: 60px;
+  }
+}

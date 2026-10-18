@@ -1,0 +1,17 @@
+{
+  "hosting": [
+    {
+      "public": "dist/flexible-portfolio-card",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "target": "flexible-portfolio-card",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

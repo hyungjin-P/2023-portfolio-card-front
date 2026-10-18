@@ -1,0 +1,37 @@
+@import 'src/assets/mixins/_font.scss';
+
+.profile-change {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  .profile-change-preview {
+    width: 86px;
+    height: 86px;
+    border: 1px solid #EAEAEA;
+    border-radius: 18px;
+    cursor: pointer;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #F8F8F8;
+
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .button-profile-change {
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    bottom: -9px;
+    right: -9px;
+  }
+
+}

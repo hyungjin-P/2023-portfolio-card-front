@@ -1,0 +1,87 @@
+@import 'src/assets/mixins/_font.scss';
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// padding
+
+.pd-14 {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.pd-sm {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.pd-lg {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.pd-all-16{
+  padding: 16px;
+}
+
+
+// title style
+.page-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+
+// button style
+
+.button-style-primary {
+  .mat-button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &.mat-flat-button.mat-primary{
+    padding: 10px;
+    background: var(--item-bg-primary);
+    border-radius: 8px;
+    @include textStyleNotoSansPlus(14px, 22px, 500);
+    color: var(--item-bg-primary-inner);
+  }
+}
+
+.button-style-secondary {
+  .mat-button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &.mat-flat-button{
+    padding: 10px;
+    border-radius: 8px;
+    @include textStyleNotoSansPlus(14px, 22px, 500);
+    color: var(--item-bg-secondary-inner);
+    border: 1px solid #000000;
+  }
+}
+
+.button-style-tertiary {
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.25px;
+  text-align: center;
+  height: 58px;
+  line-height: 58px;
+  width: 100%;
+  color: #555555;
+  &.mat-flat-button{
+    border-radius: 100px;
+  }
+}
+
+.mr-10px {
+  margin-right: 10px;
+}

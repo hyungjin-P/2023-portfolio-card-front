@@ -1,0 +1,36 @@
+<div class="login pd-sm">
+  <div class="login-title page-title">로그인 하기</div>
+
+  <div class="login-input">
+    <shared-input
+      #authorLinkField
+      [label]="'아이디'"
+      [placeholder]="'아이디'"
+      [requiredMessage]="'아이디를 입력해주세요.'"
+      (inputFieldKeyupEmitter)="toggleButtonStatus()"
+    ></shared-input>
+    <shared-input
+      #passwordField
+      [label]="'비밀번호'"
+      [type]="passwordType"
+      [eyeIcon]="true"
+      (isEyeOpened)="passwordTypeToggle(passwordField)"
+      [requiredMessage]="'비밀번호를 입력해주세요'"
+      [placeholder]="'비밀번호'"
+      (inputFieldKeyupEmitter)="toggleButtonStatus()"
+    ></shared-input>
+  </div>
+
+  <div class="forgot-password">
+    <a [routerLink]="'/forgot-password'">비밀번호를 잊으셨어요?</a>
+  </div>
+
+  <shared-button [disabled]="buttonStatus"
+                 (onClickEmitter)="login()"
+                 [buttonText]="'로그인'"></shared-button>
+
+  <button type="button"
+          class="button-signup button-style-tertiary"
+          (click)="goToSignUp()"
+          mat-flat-button>회원가입</button>
+</div>

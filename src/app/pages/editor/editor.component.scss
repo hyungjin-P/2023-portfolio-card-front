@@ -1,0 +1,20 @@
+@import '/src/assets/mixins/font';
+
+.editor-tab-container {
+  width: 100%;
+  padding: 16px 16px 0 16px;
+}
+
+.editor-container-title {
+  @include textStyleNotoSans(500, 16px);
+  font-style: normal;
+  line-height: 30px;
+  margin: 16px;
+}
+
+.button-preview-wrap{
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+}

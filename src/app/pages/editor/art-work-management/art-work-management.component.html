@@ -1,0 +1,76 @@
+<div class="art-work-wrapper"
+     cdkDropList
+     (cdkDropListDropped)="drop($event)">
+
+  <div class="art-work-block"
+       cdkDrag
+       *ngFor="let block of artWorkBlocks">
+
+    <div class="art-work-block-title">
+      <div cdkDragHandle class="art-work-block-handle">
+        <img alt="draggable block handle"
+             src="assets/icons/crackit/art-work-handle.svg">
+      </div>
+      <div class="art-work-block-custom-name">
+        작품등록
+      </div>
+      <button type="button" mat-ripple
+              class="button-more-options"
+              (click)="openBottomSheet(block)">
+        <img alt="" src="assets/icons/crackit/more.svg">
+      </button>
+      <button class="art-work-block-visibility"
+              type="button"
+              [ngClass]="block?.isOpened ? 'opened' : ''"
+              mat-ripple
+              (click)="toggle(block)">
+        <img alt="" src="assets/icons/crackit/chevron-down.svg">
+      </button>
+    </div>
+
+    <div class="art-work-block-content"
+         [ngClass]="block?.isOpened ? 'opened' : ''"
+         overlay-scrollbars>
+      <editor-artwork-image-upload
+        *ngIf="block.blockType === 'image'"
+        #imageUploader
+        [pictures]="block?.portfolioArtWorkPictures"
+        (fileChange)="artworkImageUpload($event, block, imageUploader)"
+        (deleteItem)="artworkImageDeleteItem($event, block, imageUploader)"
+      ></editor-artwork-image-upload>
+      <shared-input [label]="'타이틀 입력'"
+                    [textContent]="block?.title"
+                    [maxTextLength]="100"
+                    [placeholder]="'예) 작품 제목, 타이틀, 주제, 사이트, 소재 등'"
+                    [textLengthVisible]="true"
+                    [type]="'text'"
+                    [requiredMessage]="'내용을 입력해주세요.'"
+                    [hintMessage]="''"
+                    (inputFieldKeyupEmitter)="updateTitleInput($event, block)"
+                    #artworkTitleInput
+      ></shared-input>
+
+      <shared-textarea [label]="'본문 입력'"
+                       [textContent]="block?.description"
+                       [maxTextLength]="3000"
+                       [placeholder]="'작품 설명, 본문 내용 등'"
+                       [textLengthVisible]="true"
+                       [requiredMessage]="'내용을 입력해주세요.'"
+                       [hintMessage]="''"
+                       (inputFieldKeyupEmitter)="updateDescription($event, block)"
+                       #artworkTextarea
+      ></shared-textarea>
+
+      <shared-buttons-cancel-save
+        [disableSaveButton]="disableSaveButton"
+        (clickCancelEmitter)="openCancelConfirm()"
+        (clickSaveEmitter)="save(block)"
+      ></shared-buttons-cancel-save>
+    </div>
+  </div>
+</div>
+
+<!-- 추가 버튼 -->
+<add-artwork-item-buttons
+  (selectedAddButtonType)="clickAddButton($event)"
+></add-artwork-item-buttons>

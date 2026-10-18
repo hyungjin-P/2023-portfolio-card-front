@@ -1,0 +1,29 @@
+<div class="shared-bottom-sheet">
+  <div class="shared-bottom-sheet-content">
+    <ul>
+      <li *ngFor="let content of bottomSheetButtons" mat-ripple
+          (click)="chooseControl(content.type)">
+        <div *ngIf="content.isActive" class="shared-bottom-sheet-content-wrap">
+          <div class="shared-bottom-sheet-content-icon">
+            <img alt="" [src]="content.iconImage">
+          </div>
+          <div class="shared-bottom-sheet-content-inner">
+            <div class="shared-bottom-sheet-content-inner-title">
+              {{content.title}}
+              <div class="shared-bottom-sheet-content-inner-suffix" *ngIf="content.isSuffix">
+                {{content.suffix}}
+              </div>
+            </div>
+            <div class="shared-bottom-sheet-content-inner-sub-title" *ngIf="content.isSubtitle">
+              {{content.subtitle}}
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="shared-bottom-sheet-cancel"
+       mat-ripple
+       (click)="bottomSheetClose()"
+       tabindex="-1">취소</div>
+</div>

@@ -1,0 +1,33 @@
+<div class="block-career pd-14">
+  <shared-accordion-block-notice
+    [innerText]="'포트폴리오 프로필 화면에서 ‘Exhibition career’로 표시됩니다. 전시 경력 블록에는 “개인전, 단체전, 그룹전, 기획전, 공모전, 아트페어” 등 작품 전시 참여 형태나 종류 등 본인의 전시 경력에 맞게 자유롭게 작성할 수 있습니다.'"
+  ></shared-accordion-block-notice>
+
+  <shared-block-section
+    *ngFor="let blockSection of exhibitionBlockSections"
+    [title]="blockSection.title!"
+    [blockSectionSubtitle]="blockSection?.subtitles"
+    [label]="'전시 종류'"
+    [titlePlaceholder]="'* 전시회 종류(전시 타이틀)을 입력하세요'"
+    [subtitlePlaceholder]="'* 전시 연도 입력 YYYY년'"
+    [valuePlaceholder]="'* 전시기간에 맞는 전시내용 입력'"
+    [isDividerActive]="activeDivider(blockSection)"
+    (clickRemoveBlockSectionButtonEmitter)="removeBlockSection($event, blockSection)"
+    (updateTitleInputEmitter)="updateBlockSectionTitle($event, blockSection)"
+    (updateSubtitleEmitter)="updateBlockSection($event, blockSection)"
+    (updateValueEmitter)="updateBlockSection($event, blockSection)"
+    (removeSubtitleEmitter)="removeSubtitle($event)"
+    (removeValueEmitter)="removeValue($event)"
+  ></shared-block-section>
+
+  <shared-button-add-block-section
+    [buttonText]="'전시 종류 추가'"
+    (clickAddBlockSectionButtonEmitter)="addBlockSection()"
+  ></shared-button-add-block-section>
+
+  <shared-buttons-cancel-save
+    [disableSaveButton]="disableSaveButton"
+    (clickCancelEmitter)="openCancelConfirm($event)"
+    (clickSaveEmitter)="save()"
+  ></shared-buttons-cancel-save>
+</div>

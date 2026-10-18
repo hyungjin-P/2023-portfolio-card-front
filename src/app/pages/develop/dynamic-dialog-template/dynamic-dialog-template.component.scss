@@ -1,0 +1,27 @@
+@import '/src/assets/mixins/font';
+
+.dynamic-template-test {
+
+  .font-300 {
+    @include textStyleNotoSansPlus(15px, 15px, 300);
+  }
+  .font-400 {
+    @include textStyleNotoSansPlus(15px, 15px, 400)
+  }
+  .font-500 {
+    @include textStyleNotoSansPlus(15px, 15px, 500)
+  }
+  .font-600 {
+    @include textStyleNotoSansPlus(15px, 15px, 600)
+  }
+  .font-700 {
+    @include textStyleNotoSansPlus(15px, 15px, 700)
+  }
+  .font-800 {
+    @include textStyleNotoSansPlus(15px, 15px, 800)
+  }
+  .font-900 {
+    @include textStyleNotoSansPlus(15px, 15px, 900)
+  }
+
+}

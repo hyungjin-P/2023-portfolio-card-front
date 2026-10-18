@@ -1,0 +1,52 @@
+<div class="art-work-image-upload-wrapper">
+
+  <shared-block-label [label]="'사진 업로드'"
+                      [textLengthVisible]="true"
+                      [guideVisible]="true"
+                      [nowTextLength]="artWorks.length"
+                      [maxTextLength]="10"
+                      (guideClick)="openGuide()"
+  ></shared-block-label>
+
+  <!-- Swiper Container  -->
+  <div class="swiper art-work-image-upload"
+       #swiperContainer>
+
+    <input type="file"
+           hidden
+           accept="image/*"
+           #artworkImageUpload
+           (change)="fileChangeEvent(artworkImageUpload)">
+
+    <!-- Swiper Wrapper -->
+    <div class="swiper-wrapper art-work-image-upload-items">
+
+      <!-- Slide Items -->
+      <div class="swiper-slide add-art-work"
+           (click)="artworkImageUpload.click()">
+        <img alt="add art work" src="assets/icons/crackit/plus.svg">
+      </div>
+
+      <div class="swiper-slide added-art-work"
+           *ngFor="let artWork of artWorks"
+      >
+<!--        <img class="picture-lg" src="assets/icons/crackit/picture_lg.svg" alt="">-->
+        <img class="picture" src="{{artWork.url}}" alt="">
+
+        <button type="button"
+                class="delete-art-work"
+                (click)="deleteItemEvent(artWork)">
+          <img alt="delete artwork" src="assets/icons/crackit/close_button.svg">
+        </button>
+      </div>
+    </div>
+
+    <!-- navigation buttons -->
+    <!--  <div class="swiper-button-prev"></div>-->
+    <!--  <div class="swiper-button-next"></div>-->
+
+    <!-- scrollbar -->
+    <div class="swiper-scrollbar" #swiperScrollbar></div>
+  </div>
+
+</div>

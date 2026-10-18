@@ -1,0 +1,96 @@
+@import '/src/assets/mixins/font.scss';
+
+.shared-author-link-form {
+  display: block;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+
+  /* mat-input */
+  .mat-form-field-infix {
+    border-top: 0;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: inline-flex;
+
+    .prefix-label {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+  }
+
+  /* mat-input */
+  .mat-form-field-subscript-wrapper {
+    padding: 0 0 0 4px;
+    height: auto;
+    position: relative;
+  }
+
+  .mat-form-field-outline {
+    top: 0;
+  }
+
+  .mat-form-field-flex {
+    border-radius: 20px;
+  }
+
+  .mat-form-field-wrapper {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .mat-form-field-outline-start {
+    border-radius: 8px 0 0 8px;
+    min-width: 28px;
+  }
+
+  .mat-form-field-outline-end {
+    border-radius: 0 8px 8px 0;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .input-text-label {
+    display: block;
+    width: 100%;
+    margin-bottom: 6px;
+    @include textStyleNotoSans(600, 14px);
+  }
+
+  .shared-input-form {
+
+    .exclamation {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+    }
+
+    .message {
+      @include textStyleNotoSans(400, 12px);
+    }
+
+    .suffix-button {
+      width: 60px;
+      white-space: nowrap;
+      @include textStyleNotoSans(400, 13px);
+    }
+  }
+
+  input {
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+
+    &::placeholder {
+      font-family: 'Noto Sans KR';
+      font-weight: 500;
+    }
+  }
+
+  .shared-author-link-form-input {
+    width: 100%;
+  }
+}

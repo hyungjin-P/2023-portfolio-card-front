@@ -1,0 +1,26 @@
+<div class="block-education pd-14">
+  <shared-accordion-block-notice
+    [innerText]="'포트폴리오 프로필 화면에서 ‘Education’로 표시됩니다. 자신의 학력사항의 연도, 학교, 전공, 입학, 졸업 여부 등을 간단하게 작성해 주세요.'"
+  ></shared-accordion-block-notice>
+
+  <block-section-education
+    #blockSectionEducationComponent
+    *ngFor="let blockSection of educationBlockSections"
+    [education]="blockSection"
+    [isDividerActive]="activeDivider(blockSection)"
+    (clickRemoveBlockSectionButtonEmitter)="removeBlockSection($event, blockSection)"
+    (updateEducationInputEmitter)="updateEducation($event, blockSection)"
+    (updateYearEmitter)="updateYear($event, blockSection)"
+  ></block-section-education>
+
+  <shared-button-add-block-section
+    [buttonText]="'학력 사항 추가'"
+    (clickAddBlockSectionButtonEmitter)="addBlockSection()"
+  ></shared-button-add-block-section>
+
+  <shared-buttons-cancel-save
+    [disableSaveButton]="disableSaveButton"
+    (clickCancelEmitter)="openCancelConfirm($event)"
+    (clickSaveEmitter)="save()"
+  ></shared-buttons-cancel-save>
+</div>

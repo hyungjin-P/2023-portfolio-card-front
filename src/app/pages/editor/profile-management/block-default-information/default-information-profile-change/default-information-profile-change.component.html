@@ -1,0 +1,20 @@
+<div class="profile-change">
+  <div class="profile-change-preview"
+       (click)="profileImageUpload.click()"
+       [style.background-image]="getGeneralImageStyle()">
+    <img *ngIf="generalImageUrl === ''"
+      src="assets/icons/crackit/profile-change-preview.png" alt="">
+    <input
+      type="file"
+      hidden
+      accept="image/*"
+      #profileImageUpload
+      (change)="fileChangeEvent(profileImageUpload)">
+
+    <button class="button-profile-change"
+            type="button"
+            (click)="profileImageUpload.click()">
+      <img src="assets/icons/crackit/button-profile-change.png" alt="">
+    </button>
+  </div>
+</div>

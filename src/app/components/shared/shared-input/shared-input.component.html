@@ -1,0 +1,81 @@
+<div class="shared-input-wrap">
+
+  <shared-block-label
+    *ngIf="label !== '' && !isYearLabel"
+    [label]="label"
+    [guideVisible]="guideVisible"
+    [textLengthVisible]="textLengthVisible"
+    [maxTextLength]="maxTextLength"
+    [nowTextLength]="nowTextLength"
+    (labelClick)="getInput(sharedInput)"
+  ></shared-block-label>
+
+  <shared-year-input-label
+    *ngIf="isYearLabel"
+    [label]="'연도'"
+    (labelClick)="getInput(sharedInput)"
+    (clickAddYearButtonEmitter)="clickAddYearButton($event)"
+    (clickRemoveYearButtonEmitter)="clickRemoveYearButton(($event))"
+  ></shared-year-input-label>
+
+  <mat-form-field class="shared-input-form"
+                  [ngClass]="formFieldClass"
+                  appearance="outline">
+
+    <input [type]="type"
+           [ngClass]="customClass"
+           [formControl]="formControl"
+           [errorStateMatcher]="matcher"
+           [placeholder]="placeholder"
+           [maxLength]="maxTextLength"
+           (keyup)="inputFieldKeyup()"
+           #sharedInput
+           matInput>
+
+    <button *ngIf="eyeIcon"
+            class="eye-icon"
+            mat-icon-button
+            matSuffix
+            (click)="toggleEyeOpened()">
+      <ng-template [ngIf]="eyeOpened">
+        <button type="button">
+          <img src="assets/icons/crackit/eye-on.svg" alt="">
+        </button>
+      </ng-template>
+
+      <ng-template [ngIf]="!eyeOpened">
+        <button type="button">
+          <img src="assets/icons/crackit/eye-off.svg" alt="">
+        </button>
+      </ng-template>
+    </button>
+
+    <mat-hint *ngIf="hintMessage">
+      <img alt=""
+           class="exclamation"
+           src="assets/icons/crackit/exclamation_rounded.svg">
+      <span class="message">{{ hintMessage }}</span>
+    </mat-hint>
+
+    <mat-error *ngIf="formControl.hasError('required')">
+      <img alt=""
+           class="exclamation"
+           src="assets/icons/crackit/exclamation_rounded.svg">
+      <span class="message">{{ requiredMessage }}</span>
+    </mat-error>
+
+    <mat-error *ngIf="formControl.hasError('email')">
+      <img alt=""
+           class="exclamation"
+           src="assets/icons/crackit/exclamation_rounded.svg">
+      <span class="message">{{ emailMessage }}</span>
+    </mat-error>
+
+    <mat-error *ngIf="formControl.hasError('pattern')">
+      <img alt=""
+           class="exclamation"
+           src="assets/icons/crackit/exclamation_rounded.svg">
+      <span class="message">{{ '규칙에 맞는 내용을 입력해주세요.' }}</span>
+    </mat-error>
+  </mat-form-field>
+</div>

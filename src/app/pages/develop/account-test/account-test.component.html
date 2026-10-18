@@ -1,0 +1,32 @@
+<div class="account-test">
+<div class="copy-url-test">
+  <div class="portfolio-url" #portfolioUrl>
+    crackit-universe.com/{{loginAuthor?.authorLink}}
+  </div>
+  <button mat-button
+          type="button"
+          [matTooltip]="'복사 Copy'"
+          (click)="copyUrl(portfolioUrl.innerText)">
+    <img src="assets/icons/crackit/copy_button.svg" alt="">
+  </button>
+
+</div>
+  <shared-textarea
+    [label]="'확인란'"
+  ></shared-textarea>
+
+  <div class="account-block-title accordion"
+       (click)="toggleBlock()"
+       [ngClass]="isBlockActive? 'active': ''">비밀번호 변경
+    <button class="account-block-title-button">
+      <img src="assets/icons/crackit/chevron-down.svg" alt="">
+    </button>
+  </div>
+
+  <div class="account-block-content" >
+    <app-change-password-test *ngIf="isBlockActive"></app-change-password-test>
+  </div>
+
+</div>
+
+

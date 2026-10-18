@@ -1,0 +1,28 @@
+@import '/src/assets/mixins/font';
+
+.add-artwork-item-buttons-wrapper {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  padding: 0 16px 16px;
+
+  button {
+    padding: 12px 10px;
+    width: 162px;
+    height: 52px;
+    background: #FFFFFF;
+    border: 1px solid #EDEDEE;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 50px;
+    @include textStyleNotoSans(500, 15px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .button-image {
+      margin-right: 8px;
+    }
+  }
+}

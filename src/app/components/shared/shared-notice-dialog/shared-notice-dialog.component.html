@@ -1,0 +1,30 @@
+<div class="shared-confirm-dialog-content">
+  <div class="shared-confirm-dialog-content-icon"
+       *ngIf="noticeDialogData?.isCheckIcon">
+    <img src="assets/icons/crackit/check_rounded.svg" alt="">
+  </div>
+  <div class="shared-confirm-dialog-content-title"
+       [ngClass]="noticeDialogData?.message ? '' : 'title-only'">
+    {{ noticeDialogData?.title }}
+  </div>
+  <div class="shared-confirm-dialog-content-body">
+    <!-- 내용만 간단하게 삽입하고 싶을 때 -->
+    <ng-container *ngIf="noticeDialogData?.message">
+      {{ noticeDialogData?.message }}
+    </ng-container>
+
+    <!-- 컴포넌트를 내용으로 삽입하고 싶을 때 (복잡한 디자인) -->
+    <ng-container *ngIf="!noticeDialogData?.message">
+      <ng-container *ngComponentOutlet="noticeDialogData?.innerContent"></ng-container>
+    </ng-container>
+
+  </div>
+  <div class="shared-confirm-dialog-content-footer">
+  <button mat-flat-button
+          color="primary"
+          (click)="clickClose()">
+    {{noticeDialogData?.closeButtonText ? noticeDialogData?.closeButtonText : 'confirm' }}
+  </button>
+  </div>
+</div>
+

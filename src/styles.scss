@@ -1,0 +1,256 @@
+@import '/src/assets/mixins/font';
+@import './assets/shared/util.scss';
+@import '~overlayscrollbars/styles/overlayscrollbars.min.css';
+
+// reset
+
+h1 {
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+
+}
+h2 {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+div, section, p {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100vw white inset;
+  box-shadow: 0 0 0 100vw white inset;
+}
+
+
+:root {
+  /* background-color */
+  --bg-secondary: rgba(255, 255, 255, 1);
+
+  /* app-container background-color */
+  --bg-app-container-primary: rgba(255, 255, 255, 1);
+  --bg-app-container-secondary: rgba(0, 0, 0, 1);
+
+  /* box color */
+  --bg-box-primary: rgba(243, 243, 243, 1);
+
+  /* button, input ...  */
+  --item-bg-primary: rgba(34, 34, 34, 1);
+  --item-bg-secondary: rgba(51, 51, 51, 0.1);
+  --item-bg-third: #E6E7E8;
+  --item-bg-primary-disabled: rgba(51, 51, 51, 0.35);
+  --item-bg-primary-inner: rgba(255, 255, 255, 1);
+  --item-bg-secondary-inner: rgb(0, 0, 0);
+  --item-bg-third-inner: #c8c8c8;
+
+
+  /* text color */
+  --item-text-primary: rgba(51, 51, 51, 1);
+  --item-text-secondary: rgba(204, 204, 204, 1);
+  --item-text-third: rgb(175, 175, 175);
+
+  /* button, input 내 text ... */
+  --item-color-primary: rgba(0, 0, 0, 1);
+  --item-color-secondary: rgb(153, 153, 153);
+  --item-checkbox-primary: black;
+
+  /* element border ...  */
+  --item-border-primary: rgba(0, 0, 0, 1);
+  --item-border-radius: 30px;
+
+  /* feedback */
+  --bg-feedback-primary: rgba(0, 0, 0, 0.9);
+  --bg-feedback-primary-inner: rgba(255, 255, 255, 1);
+
+  /* global-color */
+  --danger: rgba(255, 0, 0, 1);
+  --warn: rgba(255, 255, 0, 1);
+
+  /* app global height */
+  --app-height: 100vh;
+
+  /* cupertino pane */
+  --app-container-maximum-width: 500px;
+
+    /* cupertino pane */
+  --cupertino-pane-border-radius: 50px;
+
+  /* preview color */
+  --preview-title-text-color: #FFFFFF;
+  --preview-subtitle-text-color: #CCCCCC;
+  --preview-tag-text-color: #CCCCCC;
+
+  @media not all and (hover:hover) {
+    height: var(--app-height);
+  }
+
+  --viewport-width: 390px;
+}
+
+.os-scrollbar .os-scrollbar-handle {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* snack bar style */
+
+.mat-snack-bar-container {
+  &.snackbar-primary {
+    margin-top: 50px;
+    margin-bottom: 10vh;
+
+    background-color: var(--bg-feedback-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    max-width: 480px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    .mat-simple-snack-bar-content{
+      color: var(--bg-feedback-primary-inner);
+      @include textStyleNotoSansPlus(14px, 24px, 400)
+    }
+  }
+}
+
+.mat-snack-bar-handset {
+  margin-top: 50px !important;
+  width: auto !important;
+  max-width: 100%;
+  overflow: auto;
+  text-align: center;
+}
+
+@media (max-width: 499px) {
+  .mat-snack-bar-handset{
+    margin-top: 50px !important;
+    width: 100% !important;
+  }
+}
+
+/* 메인 컨테이너 및 배경  */
+.root-container {
+  width: 100vw;
+  height: var(--app-height);
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+/* 컨텐츠 */
+.app-container {
+  box-sizing: border-box;
+  width: 100vw;
+  height: calc(100% - 40px);
+  max-width: var(--app-container-maximum-width);
+  background-color: var(--bg-app-container-primary);
+  position: absolute;
+  border-radius: var(--item-border-radius);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.16);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 70px;
+  padding-bottom: var(--item-border-radius);
+  overflow: hidden;
+
+  .app-container-content {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  &.preview-mode {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.editor-container-content {
+  background-color: var(--bg-app-container-primary);
+  border: 1px solid #E4E4E4;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  padding: 26px 14px 26px 14px;
+  margin: 16px 16px 60px;
+}
+
+@media (width < 500px) {
+  .app-container {
+    border-radius: 0;
+    height: 100%;
+    padding-top: 70px;
+    padding-bottom: 0;
+  }
+}
+
+
+.cupertino-pane-wrapper .draggable .move {
+  width: 86px;
+  height: 9px;
+  background: #e8e8e8;
+}
+
+.cupertino-pane-wrapper .pane .draggable {
+  padding-top: 20px;
+  height: 50px;
+}
+
+.cupertino-pane-wrapper .pane {
+  padding-top: 50px;
+  overflow: hidden;
+}

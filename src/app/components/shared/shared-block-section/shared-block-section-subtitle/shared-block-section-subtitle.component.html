@@ -1,0 +1,33 @@
+<div class="shared-block-section-year">
+
+  <shared-input
+    [type]="'text'"
+    #subtitleInput
+    [label]="'연도'"
+    [isYearLabel]="isSubtitleLabel"
+    [placeholder]="subtitlePlaceholder"
+    [requiredMessage]="'내용을 입력해주세요.'"
+    [hintMessage]="''"
+    [maxTextLength]="4"
+    (clickAddYearButtonEmitter)="addYear($event)"
+    (clickRemoveYearButtonEmitter)="removeYear($event)"
+    (inputFieldKeyupEmitter)="updateSubtitleInput($event)"
+  ></shared-input>
+
+  <ng-container *ngFor="let content of values; let i = index">
+    <shared-year-input
+      [inputValue]="content.value"
+      [type]="'text'"
+      [isFirstInput]="i === 0"
+      [index]="i"
+      [maxTextLength]="100"
+      [placeholder]="valuePlaceholder"
+      [requiredMessage]="'내용을 입력해주세요.'"
+      (clickAddButtonEmitter)="addYearContent($event)"
+      (clickRemoveButtonEmitter)="removeValue(content)"
+      (inputFieldKeyupEmitter)="updateValueInput($event, content)"
+    ></shared-year-input>
+  </ng-container>
+
+  <div class="divide-line-year" *ngIf="isLineActive"></div>
+</div>

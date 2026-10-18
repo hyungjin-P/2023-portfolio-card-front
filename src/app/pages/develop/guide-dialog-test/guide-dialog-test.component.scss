@@ -1,0 +1,47 @@
+@import 'src/assets/mixins/_font.scss';
+
+.background-cover {
+  width: 100%;
+  height: 180px;
+
+  background: #F8F8F8;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  position: relative;
+  .background-image{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .button-change-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .button-change-background-wrap {
+      width: 124px;
+      height: 32px;
+      border: 1px solid #AAAAAA;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .button-change-background-icon {
+        line-height: 22px;
+        margin-top: 3px;
+        margin-right: 6px;
+      }
+
+      .button-change-background-text {
+        @include textStyleNotoSansPlus(12px, 22px, 400);
+        letter-spacing: -0.4px;
+        color: #949494;
+        &.active{
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+}

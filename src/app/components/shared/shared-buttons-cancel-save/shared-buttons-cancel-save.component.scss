@@ -1,0 +1,12 @@
+.section-buttons {
+  display: flex;
+  gap: 10px;
+
+  .button-cancel, .button-save {
+    width: 50%;
+
+    &:disabled {
+      background-color: var(--item-bg-primary-disabled);
+    }
+  }
+}

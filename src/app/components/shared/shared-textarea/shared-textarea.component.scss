@@ -1,0 +1,46 @@
+@import '/src/assets/mixins/font.scss';
+
+.shared-textarea-wrap{
+  width: 100%;
+
+  .shared-textarea-form{
+    width: 100%;
+    textarea {
+      @include textStyleNotoSans(500, 13px);
+
+      &::placeholder {
+        @include textStyleNotoSans(500, 13px);
+      }
+    }
+
+    .exclamation {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+    }
+    .message {
+      @include textStyleNotoSansPlus(12px, 20px, 400);
+    }
+  }
+
+
+
+  /* mat-input */
+  .mat-form-field-infix {
+    border-top: 0;
+    width: 100%;
+  }
+
+  .mat-form-field-subscript-wrapper {
+    padding: 0 0 0 4px;
+    height: auto;
+    position: relative;
+  }
+
+  .mat-form-field-wrapper {
+    border: 1px ;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+  }
+}

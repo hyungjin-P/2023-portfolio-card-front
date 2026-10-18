@@ -1,0 +1,28 @@
+<div class="block-section-sns-link">
+  <shared-button-remove-block-section
+    (clickRemoveBlockSectionButtonEmitter)="clickRemoveBlockSectionButton($event)"
+  ></shared-button-remove-block-section>
+
+  <shared-input [type]="'text'"
+                [label]="''"
+                [placeholder]="'Http://'"
+                [requiredMessage]="'내용을 입력해주세요.'"
+                [hintMessage]="''"
+                #linkInput
+                (inputFieldKeyupEmitter)="updateLink($event)"
+  ></shared-input>
+
+  <shared-input [type]="'text'"
+                [label]="''"
+                [placeholder]="'* 링크명 입력 : 예)인스타그램, 페이스북, 유튜브 등'"
+                [requiredMessage]="'내용을 입력해주세요.'"
+                [hintMessage]="''"
+                [maxTextLength]="100"
+                #linkTitleInput
+                (inputFieldKeyupEmitter)="updateLinkTitle($event)"
+  ></shared-input>
+
+  <block-section-divider
+    *ngIf="isDividerActive"
+  ></block-section-divider>
+</div>

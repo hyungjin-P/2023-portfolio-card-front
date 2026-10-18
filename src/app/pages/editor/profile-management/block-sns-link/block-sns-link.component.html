@@ -1,0 +1,25 @@
+<div class="block-sns-link pd-14">
+  <shared-accordion-block-notice
+    [innerText]="'자신을 소개할 수 있는 소셜 및 기타 온라인 링크 주소를 입력해 주세요.'"
+  ></shared-accordion-block-notice>
+
+  <block-section-sns-link
+    #blockSectionSnsLinkComponent
+    *ngFor="let blockSection of snsLinkBlockSections"
+    [isDividerActive]="activeDivider(blockSection)"
+    (clickRemoveBlockSectionButtonEmitter)="removeBlockSection($event, blockSection)"
+    (updateLinkInputEmitter)="updateLink($event, blockSection)"
+    (updateLinkTitleInputEmitter)="updateLinkTitle($event, blockSection)"
+  ></block-section-sns-link>
+
+  <shared-button-add-block-section
+    [buttonText]="'링크 추가'"
+    (clickAddBlockSectionButtonEmitter)="addBlockSection()"
+  ></shared-button-add-block-section>
+
+  <shared-buttons-cancel-save
+    [disableSaveButton]="disableSaveButton"
+    (clickCancelEmitter)="openCancelConfirm($event)"
+    (clickSaveEmitter)="save()"
+  ></shared-buttons-cancel-save>
+</div>

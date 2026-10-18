@@ -1,0 +1,81 @@
+@import '/src/assets/mixins/font';
+
+
+.home {
+  .home-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 44px;
+    text-align: center;
+
+    margin: 60px 0 14px 0;
+  }
+
+  .home-description {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: -0.005em;
+    margin-bottom: 40px;
+  }
+
+  .create-portfolio {
+    width: 100%;
+    margin-bottom: 60px;
+
+    .create-portfolio-input-wrap {
+      display: inline-flex;
+      height: 60px;
+      align-items: center;
+      border: 1px solid var(--item-bg-primary);
+      border-radius: 10px;
+      padding: 16px 40px;
+      margin-bottom: 16px;
+      width: 100%;
+      justify-content: center;
+      cursor: pointer;
+
+      span {
+        line-height: 0;
+        color: var(--item-text-third);
+        @include textStyleNotoSans(500, 14px);
+      }
+
+      input {
+        width: 100%;
+        border: 0;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        line-height: 0;
+        @include textStyleNotoSans(500, 14px);
+
+        &::placeholder {
+          color: var(--item-color-primary);
+        }
+      }
+
+    }
+
+  }
+
+  .home-picture {
+    background-color: #eee;
+    height: 430px;
+    width: 100%;
+    margin: 50px 0;
+  }
+}
+
+@media (width < 420px) {
+  .home {
+    .create-portfolio {
+      .create-portfolio-input-wrap {
+        padding: 8px 8px;
+      }
+    }
+  }
+}

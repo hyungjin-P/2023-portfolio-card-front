@@ -1,0 +1,33 @@
+<div class="block-awards pd-14">
+  <shared-accordion-block-notice
+    [innerText]="'포트폴리오 프로필 화면에서 ‘Awards’로 표시됩니다. 본인의 수상 이력을 연도에 맞게 자유롭게 기재하여 프로필을 돋보이게 만드세요. '"
+  ></shared-accordion-block-notice>
+
+  <shared-block-section
+    *ngFor="let blockSection of awardsBlockSections"
+    [blockSectionSubtitle]="blockSection.subtitles"
+    [isDividerActive]="activeDivider(blockSection)"
+    (clickRemoveBlockSectionButtonEmitter)="removeBlockSection($event, blockSection)"
+    [label]="'수상 이력'"
+    [subtitlePlaceholder]="'* 수상 연도 입력 YYYY년'"
+    [valuePlaceholder]="'* 기관명, 수상명, 수상내용 등 입력'"
+    [isTitleInput]="false"
+    [isSubtitleLabel]="false"
+    (updateTitleInputEmitter)="updateBlockSectionTitle($event, blockSection)"
+    (updateSubtitleEmitter)="updateBlockSection($event, blockSection)"
+    (updateValueEmitter)="updateBlockSection($event, blockSection)"
+    (removeSubtitleEmitter)="removeSubtitle($event)"
+    (removeValueEmitter)="removeValue($event)"
+  ></shared-block-section>
+
+  <shared-button-add-block-section
+    [buttonText]="'수상 이력 추가'"
+    (clickAddBlockSectionButtonEmitter)="addBlockSection()"
+  ></shared-button-add-block-section>
+
+  <shared-buttons-cancel-save
+    [disableSaveButton]="disableSaveButton"
+    (clickCancelEmitter)="openCancelConfirm($event)"
+    (clickSaveEmitter)="save()"
+  ></shared-buttons-cancel-save>
+</div>

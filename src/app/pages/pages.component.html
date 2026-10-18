@@ -1,0 +1,15 @@
+<div class="root-container">
+  <shared-loading></shared-loading>
+  <div class="app-container"
+       [ngClass]="nowHeaderType === HeaderElementType.PREVIEW ? 'preview-mode' : ''">
+    <shared-header (loginButtonClicked)="goToLogin()"
+                   (goBackButtonClicked)="goBack()"
+                   (closePreviewButtonClicked)="closePreview()"
+                   [isLogin]="isLogin"
+    ></shared-header>
+
+    <div class="app-container-content" overlay-scrollbars>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

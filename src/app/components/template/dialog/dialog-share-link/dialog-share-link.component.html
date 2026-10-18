@@ -1,0 +1,18 @@
+<div class="dialog-share-link">
+  <div class="dialog-share-link-title">포트폴리오 공유하기</div>
+  <qrcode [qrdata]="qrLink!" [width]="128" [errorCorrectionLevel]="'M'"></qrcode>
+  <div class="dialog-share-link-link">{{this.link}}</div>
+  <button
+    type="button"
+    mat-ripple
+    (click)="copyLink()"
+    class="dialog-share-link-button button-copy-link">
+    링크 복사하기
+  </button>
+  <!--<button
+    type="button"
+    mat-ripple
+    class="dialog-share-link-button button-make-qr">
+    QR코드 생성하기
+  </button>-->
+</div>

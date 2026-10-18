@@ -1,0 +1,14 @@
+<div class="preview-tag-wrapper">
+
+  <div class="swiper preview-tag-swiper" #swiperContainer>
+    <div class="swiper-wrapper preview-tag-swiper-wrapper">
+
+      <div class="swiper-slide preview-tag-swiper-slide" *ngFor="let tag of tags">
+        <div class="preview-front-content-tag">
+          {{tag?.content}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

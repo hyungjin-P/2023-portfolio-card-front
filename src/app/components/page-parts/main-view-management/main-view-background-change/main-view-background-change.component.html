@@ -1,0 +1,30 @@
+<div class="background-cover"
+     [style.background-image]="getBackgroundStyle()">
+  <input
+    type="file"
+    hidden
+    accept="image/*"
+    #backgroundImageUpload
+    (change)="fileChangeEvent(backgroundImageUpload)">
+
+  <div class="button-backdrop" *ngIf="isUploaded"></div>
+
+  <button
+    class="button-change-background"
+    type="button"
+    mat-ripple
+    (click)="backgroundImageUpload.click()">
+    <div class="button-change-background-wrap">
+      <span class="button-change-background-icon">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.00684 8.49988L1.00684 9.12488C1.00684 10.1604 1.8463 10.9999 2.88184 10.9999L9.13184 10.9999C10.1674 10.9999 11.0068 10.1604 11.0068 9.12488L11.0068 8.49988M8.50684 3.49988L6.00684 0.999878M6.00684 0.999878L3.50684 3.49988M6.00684 0.999878L6.00683 8.49988"
+              [attr.stroke]="isUploaded? '#ffffff' : '#949494'" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="button-change-background-text"
+            [ngClass]="isUploaded? 'active':''">
+        {{ isUploaded ? '커버 사진 변경' : '커버 사진 업로드' }}
+      </span>
+    </div>
+  </button>
+</div>

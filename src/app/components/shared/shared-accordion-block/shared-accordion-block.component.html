@@ -1,0 +1,38 @@
+<div class="accordion-block">
+  <div class="accordion-block-title accordion"
+       [ngClass]="isBlockOpen? 'active': ''">
+
+    <span class="accordion-block-title-text">{{blockTitle}}</span>
+
+    <!-- 공개 비공개 전환, 잠정 중단   -->
+    <!--<button class="accordion-block-public-button"
+            type="button"
+            mat-ripple
+            *ngIf="isPublicButton"
+            (click)="clickPublicButton($event)">
+      <img class="accordion-block-public-button-icon"
+           src="assets/icons/crackit/eye-on.svg"
+           *ngIf="isBlockPublic" alt="">
+      <img class="accordion-block-public-button-icon"
+           src="assets/icons/crackit/eye-off.svg"
+           *ngIf="!isBlockPublic" alt="">
+    </button>-->
+
+    <button class="accordion-block-open-button"
+            type="button"
+            mat-ripple
+            (click)="clickOpenButton($event)">
+      <img class="accordion-block-open-button-icon"
+           src="assets/icons/crackit/chevron-down.svg"
+           [ngClass]="isBlockOpen? 'active': ''" alt="">
+    </button>
+  </div>
+
+  <div class="accordion-block-content"
+       [ngClass]="isBlockOpen ? 'opened' : ''"
+       overlay-scrollbars>
+    <div class="accordion-block-content-wrap"
+         [ngComponentOutlet]="innerComponent">
+    </div>
+  </div>
+</div>

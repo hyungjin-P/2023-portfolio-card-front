@@ -1,0 +1,46 @@
+<div class="shared-textarea-wrap">
+  <shared-block-label
+    [label]="label"
+    [guideVisible]="guideVisible"
+    [textLengthVisible]="textLengthVisible"
+    [maxTextLength]="maxTextLength"
+    [nowTextLength]="nowTextLength"
+    (labelClick)="getTextarea(textarea)"
+  ></shared-block-label>
+
+  <mat-form-field appearance="outline"
+                  [ngClass]="formFieldClass"
+                  class="shared-textarea-form">
+    <textarea matInput
+              [rows]="rows"
+              #textarea
+              [ngClass]="customClass"
+              [formControl]="formControl"
+              [errorStateMatcher]="matcher"
+              [placeholder]="placeholder"
+              [maxLength]="maxTextLength"
+              (keyup)="inputFieldKeyup($event)"
+    ></textarea>
+
+    <mat-hint *ngIf="hintMessage">
+      <img alt=""
+           class="exclamation"
+           src="assets/icons/crackit/exclamation_rounded.svg">
+      <span class="message">{{ hintMessage }}</span>
+    </mat-hint>
+
+    <mat-error *ngIf="formControl.hasError('required')">
+      <img alt=""
+           class="exclamation"
+           src="assets/icons/crackit/exclamation_rounded.svg">
+      <span class="message">{{ requiredMessage }}</span>
+    </mat-error>
+
+    <mat-error *ngIf="formControl.hasError('pattern')">
+      <img alt=""
+           class="exclamation"
+           src="assets/icons/crackit/exclamation_rounded.svg">
+      <span class="message">{{ '규칙에 맞는 내용을 입력해주세요.' }}</span>
+    </mat-error>
+  </mat-form-field>
+</div>

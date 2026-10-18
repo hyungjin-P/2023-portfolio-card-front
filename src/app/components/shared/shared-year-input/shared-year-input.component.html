@@ -1,0 +1,54 @@
+<div class="shared-year-input-wrap">
+
+  <button class="button-add-year-content"
+          type="button"
+          mat-ripple
+          *ngIf="isFirstInput"
+          (click)="clickAddButton(sharedYearInput)">
+    <img src="assets/icons/crackit/button-add-year-content.svg" alt="">
+  </button>
+
+  <button class="button-remove-year-content"
+          type="button"
+          mat-ripple
+          *ngIf="!isFirstInput"
+          (click)="clickRemoveButton(sharedYearInput)">
+    <img src="assets/icons/crackit/button-remove-year-content.svg" alt="">
+  </button>
+
+  <mat-form-field class="shared-input-form"
+                  [ngClass]="formFieldClass"
+                  appearance="outline">
+
+    <input [type]="type"
+           [ngClass]="customClass"
+           [formControl]="formControl"
+           [errorStateMatcher]="matcher"
+           [placeholder]="placeholder"
+           [maxLength]="maxTextLength"
+           (keyup)="inputFieldKeyup($event)"
+           #sharedYearInput
+           matInput>
+
+    <mat-hint *ngIf="hintMessage">
+      <img alt=""
+           class="exclamation"
+           src="assets/icons/crackit/exclamation_rounded.svg">
+      <span class="message">{{ hintMessage }}</span>
+    </mat-hint>
+
+    <mat-error *ngIf="formControl.hasError('required')">
+      <img alt=""
+           class="exclamation"
+           src="assets/icons/crackit/exclamation_rounded.svg">
+      <span class="message">{{ requiredMessage }}</span>
+    </mat-error>
+
+    <mat-error *ngIf="formControl.hasError('pattern')">
+      <img alt=""
+           class="exclamation"
+           src="assets/icons/crackit/exclamation_rounded.svg">
+      <span class="message">{{ '규칙에 맞는 내용을 입력해주세요.' }}</span>
+    </mat-error>
+  </mat-form-field>
+</div>

@@ -1,0 +1,40 @@
+@import 'src/assets/mixins/_font.scss';
+
+.footer {
+  box-shadow: 0px -1px 1px 0px #0000001A;
+  padding: 34px 24px;
+  .logo {
+    letter-spacing: -0.2px;
+    @include textStyleMontserratPlus(16px, 22px, 700);
+    margin-bottom: 16px;
+  }
+  .link {
+    margin-top: 4px;
+    cursor: pointer;
+    margin-right: 16px;
+    @include textStyleNotoSansPlus(13px, 20px, 500);
+    color: var(--item-text-primary);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .copyright {
+    margin-top: 14px;
+    margin-bottom: 8px;
+    @include textStyleNotoSansPlus(13px, 20px, 400);
+    color: #666666;
+  }
+
+  .company-info {
+    display: flex;
+    flex-direction: column;
+    @include textStyleNotoSansPlus(13px, 20px, 400);
+    color: #666666;
+    .span-company-info{
+      margin-bottom: 4px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.swiper{
+  --swiper-navigation-color: #000;
+  --swiper-pagination-color: #000;
+
+  height: 596px;
+  .swiper-wrapper {
+    .swiper-slide {
+      img {
+        height: 596px;
+      }
+    }
+  }
+}

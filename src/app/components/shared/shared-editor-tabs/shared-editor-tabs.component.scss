@@ -1,0 +1,60 @@
+@import '/src/assets/mixins/font';
+
+.shared-editor-tabs {
+  width: 100%;
+  display: inline-block;
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--item-bg-third);
+    border-radius: 8px;
+    height: 46px;
+
+    li {
+      position: relative;
+      flex-grow: 1;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      @include textStyleNotoSansPlus(14px, 20px, 400);
+      color: #4F4F4F;
+      transition: background-color 0.6s ease;
+
+      /** 컬러가 다양해서 추후 팔레트 보고 추가해야 할 듯 함*/
+      &.active {
+        background-color: white;
+        border-radius: 8px;
+        border: 2px solid black;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12), 0 3px 1px rgba(0, 0, 0, 0.04);
+        @include textStyleNotoSansPlus(14px, 20px, 700);
+
+        .tab-separator {
+          display: none;
+        }
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        line-height: 42px;
+        text-align: center;
+      }
+
+      .tab-separator {
+        position: absolute;
+        height: 18.35px;
+        top: 50%;
+        right: -1px;
+        border: 1px solid var(--item-bg-third-inner);
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+
+
+}

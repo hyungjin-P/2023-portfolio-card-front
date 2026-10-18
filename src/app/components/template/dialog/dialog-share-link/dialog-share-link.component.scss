@@ -1,0 +1,48 @@
+@import 'src/assets/mixins/_font.scss';
+
+.dialog-share-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .dialog-share-link-title {
+    @include textStyleMontserratPlus(20px, 24px, 600);
+    text-align: center;
+    color: #000000;
+    margin-bottom: 34px;
+  }
+
+  .dialog-share-link-image {
+    width: 105px;
+    height: 105px;
+    background: #EDEDED;
+    border: 1px solid #000000;
+    margin-bottom: 18px;
+  }
+
+  .dialog-share-link-link {
+    @include textStyleMontserratPlus(20px, 30px, 600);
+    color: #333333;
+    margin-bottom: 34px;
+  }
+
+  .dialog-share-link-button {
+    @include textStyleMontserratPlus(15px, 22px, 700);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    width: 100%;
+    border: 1px solid #000000;
+  }
+
+  .button-copy-link{
+    margin-bottom: 12px;
+
+  }
+
+  .button-make-qr{
+
+  }
+
+}

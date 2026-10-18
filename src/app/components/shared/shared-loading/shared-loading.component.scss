@@ -1,0 +1,22 @@
+.shared-loading {
+  display: none;
+
+  &.start {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    .shared-loading-spinner {
+      padding: 0;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
