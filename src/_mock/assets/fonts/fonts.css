@@ -1,0 +1,6 @@
+/* 목업 전용 self-host 폰트 (원본: Google Fonts CDN). index.mock.html 이 이 파일 하나를 링크한다. */
+@import url("./noto-sans-kr/noto-sans-kr.css");
+@import url("./montserrat/montserrat.css");
+@import url("./poppins/poppins.css");
+@import url("./roboto/roboto.css");
+@import url("./material-icons/material-icons.css");

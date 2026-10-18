@@ -1,0 +1,11 @@
+/* --configuration=mock 전용. 원본 tsconfig.app.json 을 상속하고 진입점만 main.mock.ts 로 바꾼다. */
+{
+  "extends": "../../tsconfig.app.json",
+  "files": [
+    "main.mock.ts",
+    "../polyfills.ts"
+  ],
+  "include": [
+    "../**/*.d.ts"
+  ]
+}
