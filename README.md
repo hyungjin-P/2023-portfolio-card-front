@@ -84,6 +84,45 @@ npx ng serve --configuration=mock   # http://localhost:4210
 - 회사 정보(대표자명·사업자등록번호·전화·이메일)는 `***` 형태로 가렸다. 상호와 로고 표기는 남겼다. 가입 화면 이메일 예시와 JSDoc 예시 이메일은 `example.com` 주소로 바꿨다.
 - 목업 모드는 이 변경과 무관하게 동작한다(API 주소·암호화 키를 목업 environment 가 대신한다).
 
+## 화면 (목업 모드 캡처)
+
+`docs/screens/` 에 46장(23화면 × 1440·390 폭)과 흐름 녹화 1개가 있다. 회사 정보는 촬영할 때 화면에서 "(가림)"으로 가렸고, 미완성 기능에는 배지를 붙였다.
+
+<p>
+  <img src="docs/screens/01-c-editor-main-view-390.png" width="180" alt="대표화면 편집">
+  <img src="docs/screens/01-g-preview-front-390.png" width="180" alt="공개 카드 앞면">
+  <img src="docs/screens/01-i-preview-back-390.png" width="180" alt="공개 카드 뒷면">
+  <img src="docs/screens/01-k-preview-artwork-390.png" width="180" alt="작품 패널">
+</p>
+
+| 화면 | 1440 | 390 |
+|---|---|---|
+| 홈 — 희망 주소 입력 | [01-a](docs/screens/01-a-home-1440.png) | [01-a](docs/screens/01-a-home-390.png) |
+| 가입 — 아이디 중복 확인 | [01-b](docs/screens/01-b-sign-up-1440.png) | [01-b](docs/screens/01-b-sign-up-390.png) |
+| 대표화면 편집 — 커버 업로드·타이틀·키워드 | [01-c](docs/screens/01-c-editor-main-view-1440.png) | [01-c](docs/screens/01-c-editor-main-view-390.png) |
+| 작품 편집 — 사진 2장·제목·본문 | [01-d](docs/screens/01-d-editor-art-work-1440.png) | [01-d](docs/screens/01-d-editor-art-work-390.png) |
+| 프로필 편집 — 기본정보·연락처 | [01-e](docs/screens/01-e-editor-profile-1440.png) | [01-e](docs/screens/01-e-editor-profile-390.png) |
+| 프로필 편집 — 전시 경력 블록 | [01-f](docs/screens/01-f-editor-profile-history-1440.png) | [01-f](docs/screens/01-f-editor-profile-history-390.png) |
+| 공개 카드 앞면 | [01-g](docs/screens/01-g-preview-front-1440.png) | [01-g](docs/screens/01-g-preview-front-390.png) |
+| 공유 다이얼로그 — QR·링크 | [01-h](docs/screens/01-h-share-dialog-1440.png) | [01-h](docs/screens/01-h-share-dialog-390.png) |
+| 공개 카드 뒷면 — 프로필·연락처·학력 | [01-i](docs/screens/01-i-preview-back-1440.png) | [01-i](docs/screens/01-i-preview-back-390.png) |
+| 공개 카드 뒷면 — 전시·수상·기타 | [01-j](docs/screens/01-j-preview-back-history-1440.png) | [01-j](docs/screens/01-j-preview-back-history-390.png) |
+| 작품 패널 — 사진 슬라이더 | [01-k](docs/screens/01-k-preview-artwork-1440.png) | [01-k](docs/screens/01-k-preview-artwork-390.png) |
+| 로그인 실패 토스트 | [02](docs/screens/02-login-failed-1440.png) | [02](docs/screens/02-login-failed-390.png) |
+| 작품 편집 — 블록 목록(시드 작가) | [03-a](docs/screens/03-a-editor-art-work-1440.png) | [03-a](docs/screens/03-a-editor-art-work-390.png) |
+| 작품 블록 메뉴 — 바텀시트 | [03-b](docs/screens/03-b-art-work-bottom-sheet-1440.png) | [03-b](docs/screens/03-b-art-work-bottom-sheet-390.png) |
+| 전시 경력 3계층 입력 | [04-a](docs/screens/04-a-editor-profile-exhibition-1440.png) | [04-a](docs/screens/04-a-editor-profile-exhibition-390.png) |
+| 삭제 확인 다이얼로그 | [04-b](docs/screens/04-b-profile-delete-confirm-1440.png) | [04-b](docs/screens/04-b-profile-delete-confirm-390.png) |
+| 가입 입력 검증 | [05](docs/screens/05-sign-up-validation-1440.png) | [05](docs/screens/05-sign-up-validation-390.png) |
+| 시드 작가 카드 — 앞면 | [06-a](docs/screens/06-a-preview-front-1440.png) | [06-a](docs/screens/06-a-preview-front-390.png) |
+| 시드 작가 카드 — 뒷면 위 | [06-b](docs/screens/06-b-preview-back-1440.png) | [06-b](docs/screens/06-b-preview-back-390.png) |
+| 시드 작가 카드 — 뒷면 아래 | [06-c](docs/screens/06-c-preview-back-history-1440.png) | [06-c](docs/screens/06-c-preview-back-history-390.png) |
+| 시드 작가 카드 — 작품 패널 | [06-d](docs/screens/06-d-preview-artwork-1440.png) | [06-d](docs/screens/06-d-preview-artwork-390.png) |
+| 두 번째 시드 작가 — 앞면 | [07-a](docs/screens/07-a-preview-front-moonlit-1440.png) | [07-a](docs/screens/07-a-preview-front-moonlit-390.png) |
+| 두 번째 시드 작가 — 뒷면 | [07-b](docs/screens/07-b-preview-back-moonlit-1440.png) | [07-b](docs/screens/07-b-preview-back-moonlit-390.png) |
+
+흐름 녹화: [01-flow-1440.webm](docs/screens/01-flow-1440.webm) — 가입 → 에디터 3탭 → 공개 카드(65.8초, 1440×900).
+
 ## 라이선스
 
 All rights reserved — 포트폴리오 열람용
