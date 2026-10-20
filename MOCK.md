@@ -1,4 +1,4 @@
-# 목업 모드 실행 안내 (`portfolio/mock` 브랜치)
+# 목업 모드 실행 안내 (`portfolio/mock` 브랜치 — 공개본에서는 `main`)
 
 back API·외부 서비스 없이 이 front 를 로컬에서 단독으로 켜는 방법이다. 원본 코드는 그대로 두고 `src/_mock/` 에 목업 층을 덧붙였다. `--configuration=mock` 을 주지 않으면 원본 경로가 그대로 빌드된다.
 
@@ -54,7 +54,7 @@ npx ng serve --configuration=mock
 | `.nvmrc` | 신규 `16.20.2` |
 | `package-lock.json` | 신규 추적(`.gitignore` 의 `package-lock.json` 한 줄 삭제) |
 | `MOCK.md` | 이 문서 |
-| 그 밖의 `src/**` | **수정 없음** — `git diff <원본 스냅샷>..portfolio/mock -- src ':!src/_mock'` 가 비어 있다 |
+| 그 밖의 `src/**` | **수정 없음** — `git diff <원본 스냅샷>..main -- src ':!src/_mock'` 가 비어 있다 |
 
 플래그 off production 빌드의 청크 파일명·바이트가 목업 층 전 기준선과 같다(검증 기록: `portfolio-notes/portfolio-card-front/stage2-mock.md`).
 
@@ -89,4 +89,4 @@ npx ng serve --configuration=mock
 ## 알려진 제약
 
 - 프리뷰에서 다른 작가 주소로 바로 옮기면(`/a` → `/b`) 같은 컴포넌트가 재사용돼 내용이 바뀌지 않는다(원본 동작). 새로고침하거나 다른 화면을 거친다.
-- 푸터·약관의 회사 정보와 가입 화면 이메일 placeholder 의 도메인은 원본 텍스트 그대로다(목업 범위 밖).
+- 푸터·처리방침의 회사 정보(대표자명·사업자등록번호·전화·이메일)는 공개본에서 `***` 형태로, 가입 화면 이메일 placeholder 는 `example.com` 주소로 바꿨다(README "공개본에서 바꾼 것"). 목업 층은 이 텍스트를 바꾸지 않는다.
